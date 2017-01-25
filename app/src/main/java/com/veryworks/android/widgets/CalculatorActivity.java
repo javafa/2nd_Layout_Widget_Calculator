@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class WidgetActivity extends AppCompatActivity implements View.OnClickListener{
+public class CalculatorActivity extends AppCompatActivity implements View.OnClickListener{
 
     // 1. 위젯 변수 선언
     TextView result;
@@ -36,7 +36,7 @@ public class WidgetActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_widget);
+        setContentView(R.layout.activity_calculator);
 
         // 2. 실제 위젯 주입
         result = (TextView) findViewById(R.id.result);
@@ -85,7 +85,7 @@ public class WidgetActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View view) {
 
-        Log.d("WidgetActivity","view="+view);
+        Log.d("CalculatorActivity","view="+view);
 
         switch(view.getId()){
             case R.id.btn0:
@@ -134,7 +134,7 @@ public class WidgetActivity extends AppCompatActivity implements View.OnClickLis
                 eval(preview.getText().toString());
                 break;
             case R.id.btnCancel:
-                Log.d("WidgetActivity","cancel clicked="+view);
+                Log.d("CalculatorActivity","cancel clicked="+view);
                 setPreview("");
                 setResult("");
                 break;
@@ -177,7 +177,7 @@ public class WidgetActivity extends AppCompatActivity implements View.OnClickLis
                 two = Double.parseDouble(list.get(index+1));
                 // 4.3.3 두 숫자를 곱한다.
                 sum = one * two;
-                Log.d("WidgetActivity","check [***] index="+index+", sum="+sum);
+                Log.d("CalculatorActivity","check [***] index="+index+", sum="+sum);
                 // 곱하기에 걸렸다는 표식을 해준다
                 check = true;
             // 4.3 값이 나누기일 경우
@@ -188,7 +188,7 @@ public class WidgetActivity extends AppCompatActivity implements View.OnClickLis
                 two = Double.parseDouble(list.get(index+1));
                 // 4.3.3 값을 더한다.
                 sum = one / two;
-                Log.d("WidgetActivity","check [///] index="+index+", sum="+sum);
+                Log.d("CalculatorActivity","check [///] index="+index+", sum="+sum);
                 check = true;
             // 4.4 연산자에 걸리지 않으면 체크 플래그를 false 전환해서 반복문을 진행하게 한다.
             }else{
@@ -209,7 +209,7 @@ public class WidgetActivity extends AppCompatActivity implements View.OnClickLis
             }
         }
 
-        Log.d("WidgetActivity","check [index]="+index);
+        Log.d("CalculatorActivity","check [index]="+index);
 
         index = 0;
 
@@ -224,13 +224,13 @@ public class WidgetActivity extends AppCompatActivity implements View.OnClickLis
                 one = Double.parseDouble(list.get(index-1));
                 two = Double.parseDouble(list.get(index+1));
                 sum = one + two;
-                Log.d("WidgetActivity","check [+++] index="+index+", sum="+sum);
+                Log.d("CalculatorActivity","check [+++] index="+index+", sum="+sum);
                 check = true;
             }else if(item.equals("-")){
                 one = Double.parseDouble(list.get(index-1));
                 two = Double.parseDouble(list.get(index+1));
                 sum = one - two;
-                Log.d("WidgetActivity","check [---] index="+index+", sum="+sum);
+                Log.d("CalculatorActivity","check [---] index="+index+", sum="+sum);
                 check = true;
             }else{
                 check = false;

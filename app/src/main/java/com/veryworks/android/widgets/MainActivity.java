@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.calc :
-                intent = new Intent(this, WidgetActivity.class);
+                intent = new Intent(this, CalculatorActivity.class);
                 startActivity(intent);
                 break;
 
