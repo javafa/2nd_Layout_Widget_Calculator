@@ -56,7 +56,6 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
         btnMinus = (Button) findViewById(R.id.btnMinus);
         btnMultipy = (Button) findViewById(R.id.btnMutiply);
         btnDivide = (Button) findViewById(R.id.btnDivide);
-
         btnRun = (Button) findViewById(R.id.btnRun);
         btnCancel = (Button) findViewById(R.id.btnCancel);
 
